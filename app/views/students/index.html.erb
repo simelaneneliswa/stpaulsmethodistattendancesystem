@@ -7,7 +7,7 @@
         <span class="text-xl font-medium text-gray-800"><%= link_to student.name, student_path(student), class: "text-blue-600 hover:underline" %></span>
         <div class="flex space-x-4">
           <%= link_to 'Edit', edit_student_path(student), class: "text-sm text-blue-500 hover:text-blue-700 bg-blue-100 px-3 py-1 rounded" %>
-          <%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-sm text-red-500 hover:text-red-700 bg-red-100 px-3 py-1 rounded" %>
+          <%= link_to 'Remove', student_path(student), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-sm text-red-500 hover:text-red-700 bg-red-100 px-3 py-1 rounded" %>
         </div>
       </li>
     <% end %>
