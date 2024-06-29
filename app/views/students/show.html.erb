@@ -1,0 +1,15 @@
+<h1><%= @student.name %></h1>
+<p>Grade: <%= @student.grade %></p>
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+<h2>Attendance</h2>
+<%= link_to 'New Attendance', new_student_attendance_path(@student) %>
+<ul>
+  <% @student.attendances.each do |attendance| %>
+    <li>
+      <%= attendance.date %> - <%= attendance.status %>
+      (<%= link_to 'Edit', edit_student_attendance_path(@student, attendance) %>)
+    </li>
+  <% end %>
+</ul>
+

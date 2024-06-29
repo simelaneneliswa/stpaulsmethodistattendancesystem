@@ -1,0 +1,15 @@
+current directory: /home/neliswa/stpaulsmethodistschoolattendancesystem/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240626-30938-pfp2kd.rb extconf.rb
+creating Makefile
+
+current directory: /home/neliswa/stpaulsmethodistschoolattendancesystem/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /home/neliswa/stpaulsmethodistschoolattendancesystem/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/neliswa/stpaulsmethodistschoolattendancesystem/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20240626-30938-6t21k7/racc

@@ -1,0 +1,26 @@
+<h1>New Attendance</h1>
+<%= form_with(model: [@student, @attendance], local: true) do |form| %>
+  <% if @attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+      <ul>
+        <% @attendance.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ['present', 'absent', 'tardy'] %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= link_to 'Back', student_attendances_path(@student) %>
+
