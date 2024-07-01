@@ -1,26 +1,26 @@
-<h1>New Attendance</h1>
+<h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">New Attendance</h1>
 <%= form_with(model: [@student, @attendance], local: true) do |form| %>
   <% if @attendance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
-      <ul>
+    <div id="error_explanation" style="margin-bottom: 20px;">
+      <h2 style="font-size: 18px; font-weight: bold;"><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
+      <ul style="list-style-type: none; margin-top: 10px; padding-left: 0;">
         <% @attendance.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li style="font-size: 14px; color: red;"><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div style="margin-bottom: 15px;">
+    <%= form.label :date, style: "display: block; font-weight: bold; margin-bottom: 5px;" %>
+    <%= form.date_select :date, style: "padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;" %>
   </div>
-  <div>
-    <%= form.label :status %>
-    <%= form.select :status, ['present', 'absent', 'tardy'] %>
+  <div style="margin-bottom: 15px;">
+    <%= form.label :status, style: "display: block; font-weight: bold; margin-bottom: 5px;" %>
+    <%= form.select :status, ['present', 'absent', 'tardy'], style: "width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div style="margin-top: 20px;">
+    <%= form.submit "Create Attendance", style: "background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" %>
   </div>
 <% end %>
-<%= link_to 'Back', student_attendances_path(@student) %>
+<%= link_to 'Back', student_attendances_path(@student), style: "display: block; margin-top: 20px; font-size: 16px; text-decoration: none;" %>
 

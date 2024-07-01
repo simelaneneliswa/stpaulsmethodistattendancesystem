@@ -10,13 +10,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= link_to 'Home', students_path %> | 
-    <% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign in', new_user_session_path %>
-<% end %>
-    <%= yield %>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6;">
+    <div style="margin-bottom: 1rem;">
+      <%= link_to 'Home', students_path, style: "color: #007bff; text-decoration: none; margin-right: 1rem;" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, style: "color: #007bff; text-decoration: none;" %>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path, style: "color: #007bff; text-decoration: none;" %>
+      <% end %>
+    </div>
+    <div style="padding: 1rem;">
+      <%= yield %>
+    </div>
   </body>
 </html>
+
