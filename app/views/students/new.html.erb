@@ -1,31 +1,31 @@
-<h1>New Student</h1>
+<h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">New Student</h1>
 
 <%= form_with(model: @student, local: true) do |form| %>
   <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-      <ul>
+    <div id="error_explanation" style="margin-bottom: 20px;">
+      <h2 style="font-size: 18px; font-weight: bold;"><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <ul style="list-style-type: none; margin-top: 10px; padding-left: 0;">
         <% @student.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li style="font-size: 14px; color: red;"><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+  <div class="field" style="margin-bottom: 15px;">
+    <%= form.label :name, style: "display: block; font-weight: bold; margin-bottom: 5px;" %>
+    <%= form.text_field :name, style: "padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :grade %>
-    <%= form.text_field :grade %>
+
+  <div class="field" style="margin-bottom: 15px;">
+    <%= form.label :grade, style: "display: block; font-weight: bold; margin-bottom: 5px;" %>
+    <%= form.text_field :grade, style: "padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;" %>
   </div>
-  
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="actions" style="margin-top: 20px;">
+    <%= form.submit "Create Student", style: "background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" %>
   </div>
 <% end %>
 
-<%= link_to 'Back', students_path %>
+<%= link_to 'Back', students_path, style: "display: block; margin-top: 20px; font-size: 16px; text-decoration: none;" %>
 

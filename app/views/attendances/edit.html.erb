@@ -1,7 +1,8 @@
-<h1>Edit Attendance</h1>
+<h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Edit Attendance</h1>
+
 <%= form_with(model: [@student, @attendance], local: true) do |form| %>
   <% if @attendance.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" style="color: red; margin-bottom: 20px;">
       <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
       <ul>
         <% @attendance.errors.full_messages.each do |message| %>
@@ -10,17 +11,20 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div style="margin-bottom: 20px;">
+    <%= form.label :date, style: "font-weight: bold; display: block; margin-bottom: 5px;" %>
+    <%= form.date_select :date, style: "padding: 5px; width: 100%; box-sizing: border-box;" %>
   </div>
-  <div>
-    <%= form.label :status %>
-    <%= form.select :status, ['present', 'absent', 'tardy'] %>
+  <div style="margin-bottom: 20px;">
+    <%= form.label :status, style: "font-weight: bold; display: block; margin-bottom: 5px;" %>
+    <%= form.select :status, ['present', 'absent', 'tardy'], {}, style: "padding: 5px; width: 100%; box-sizing: border-box;" %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div style="margin-bottom: 20px;">
+    <%= form.submit 'Save', style: "background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" %>
   </div>
 <% end %>
-<%= link_to 'Back', student_attendances_path(@student) %>
+
+<div style="margin-top: 20px;">
+  <%= link_to 'Back', student_attendances_path(@student), style: "background-color: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none;" %>
+</div>
 
